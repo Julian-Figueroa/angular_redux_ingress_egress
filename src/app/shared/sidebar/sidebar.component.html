@@ -18,27 +18,27 @@
     </li>
 
     <li class="nav-item">
-      <a class="nav-link">
+      <a class="nav-link" [routerLink]="['/']">
         <i class="menu-icon fa fa-tachometer-alt"></i>
         <span class="menu-title">Dashboard</span>
       </a>
     </li>
 
     <li class="nav-item">
-      <a class="nav-link">
+      <a class="nav-link" [routerLink]="['/ingress-egress']">
         <i class="menu-icon fa fa-clipboard-list"></i>
-        <span class="menu-title">Ingress y Egress</span>
+        <span class="menu-title">Ingress & Egress</span>
       </a>
     </li>
 
-    <li class="nav-item">
+    <li class="nav-item" [routerLink]="['/detail']">
       <a class="nav-link">
         <i class="menu-icon fa fa-table"></i>
-        <span class="menu-title">Detail</span>
+        <span class="menu-title"> Detail</span>
       </a>
     </li>
 
-    <li class="nav-item">
+    <li class="nav-item" [routerLink]="['/login']">
       <a class="nav-link cursor">
         <i class="menu-icon fa fa-sign-out-alt"></i>
         <span class="menu-title">Logout</span>
