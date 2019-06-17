@@ -15,11 +15,25 @@
           </thead>
 
           <tbody>
-            <tr>
-              <td>Description</td>
-              <td>Amount</td>
-              <td>Type</td>
-              <td>Actions</td>
+            <tr *ngFor="let item of items | sortIngressEgress">
+              <td>{{ item.description }}</td>
+              <td>{{ item.amount | currency }}</td>
+              <td>
+                <span
+                  [ngClass]="{
+                    'text-success': item.type === 'ingress',
+                    'text-danger': item.type === 'egress'
+                  }"
+                >
+                  {{ item.type }}
+                </span>
+              </td>
+              <td>
+                <button (click)="deleteItem(item)" class="btn btn-danger">
+                  <i class="fa fa-trash"></i>
+                  Delete
+                </button>
+              </td>
             </tr>
           </tbody>
         </table>

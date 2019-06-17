@@ -8,7 +8,7 @@
           </div>
 
           <div class="text-wrapper">
-            <p class="profile-name">Walter White</p>
+            <p class="profile-name">{{ name }}</p>
             <div>
               <small class="designation text-muted">Manager</small>
             </div>
@@ -31,15 +31,15 @@
       </a>
     </li>
 
-    <li class="nav-item" [routerLink]="['/detail']">
-      <a class="nav-link">
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/detail']">
         <i class="menu-icon fa fa-table"></i>
         <span class="menu-title"> Detail</span>
       </a>
     </li>
 
-    <li class="nav-item" [routerLink]="['/login']">
-      <a class="nav-link cursor">
+    <li class="nav-item">
+      <a class="nav-link cursor" (click)="logout()">
         <i class="menu-icon fa fa-sign-out-alt"></i>
         <span class="menu-title">Logout</span>
       </a>
