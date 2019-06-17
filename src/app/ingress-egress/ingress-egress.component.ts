@@ -4,10 +4,10 @@ import { IngressEgress } from './ingress-egress.models';
 import { IngressEgressService } from './ingress-egress.service';
 
 import Swal from 'sweetalert2';
-import { AppState } from '../app.reducer';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
 import { ActivateLoadingAction, DeactivateLoadingAction } from '../shared/ui.actions';
+import * as fromIngresEgress from './ingress-egress.reducers';
 
 @Component({
   selector: 'app-ingress-egress',
@@ -21,7 +21,7 @@ export class IngressEgressComponent implements OnInit, OnDestroy {
   loadingSubs: Subscription = new Subscription();
   loading: boolean;
 
-  constructor(public ingressEgressService: IngressEgressService, private store: Store<AppState>) { }
+  constructor(public ingressEgressService: IngressEgressService, private store: Store<fromIngresEgress.AppState>) { }
 
   ngOnInit() {
     this.loadingSubs = this.store.select('ui')

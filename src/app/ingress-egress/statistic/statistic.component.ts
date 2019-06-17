@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { AppState } from '../../app.reducer';
 import { Subscription } from 'rxjs';
 import { IngressEgress } from '../ingress-egress.models';
-import { Label, MultiDataSet } from 'ng2-charts';
 import { ChartType } from 'chart.js';
+
+import * as fromIngresEgress from '../ingress-egress.reducers';
 
 @Component({
   selector: 'app-statistic',
@@ -25,7 +25,7 @@ export class StatisticComponent implements OnInit {
 
   subcription: Subscription = new Subscription();
 
-  constructor(private store: Store<AppState>) { }
+  constructor(private store: Store<fromIngresEgress.AppState>) { }
 
   ngOnInit() {
     this.subcription = this.store.select('ingressEgress')

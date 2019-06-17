@@ -1,8 +1,13 @@
 import * as fromIE from './ingress-egress.actions';
 import { IngressEgress } from './ingress-egress.models';
+import { AppState } from '../app.reducer';
 
 export interface IEState {
     items: IngressEgress[]
+}
+
+export interface AppState extends AppState {
+    ingressEgress: IEState;
 }
 
 const initState: IEState = {
